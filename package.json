@@ -9,7 +9,9 @@
     "build:ui": "node build.mjs",
     "start": "node build.mjs && electron .",
     "dist": "node build.mjs && electron-builder --win nsis",
-    "test": "node --test test/core.test.js"
+    "test": "node --test test/core.test.js",
+    "release": "node scripts/release.mjs",
+    "connect-github": "node scripts/connect-github.mjs"
   },
   "build": {
     "appId": "com.ledger.notes",

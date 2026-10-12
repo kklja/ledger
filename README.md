@@ -2,9 +2,11 @@
 
 Personal college notes + schedule + coursework app for Windows (Electron).
 
-## Install / run
-- Installer: `release\Ledger Setup 1.0.0.exe` (per-user, adds Start menu + desktop shortcuts).
-- Dev: `npm start` · tests: `npm test` · rebuild installer: `npm run dist`
+## Install / run / update
+- Install once from the latest GitHub Release (or `release\` after a local build). After that Ledger updates itself from GitHub Releases: it downloads in the background and installs while it sits in the tray (or Settings → Restart to update).
+- Publish a new version: `npm run release` (patch) / `npm run release minor`. Tests, bumps the version, pushes, builds and publishes.
+- First-time GitHub hookup: `gh auth login`, then `npm run connect-github`.
+- Dev: `npm start` · tests: `npm test` · local installer only: `npm run dist`
 
 ## First run
 1. Settings → Coursework: enter your Canvas and Blackboard addresses.
