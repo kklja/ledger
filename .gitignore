@@ -1,0 +1,7 @@
+node_modules/
+release/
+renderer/dist/
+.claude/
+*.log
+*.tmp
+.playwright-mcp/

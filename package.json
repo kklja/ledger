@@ -1,0 +1,66 @@
+{
+  "name": "ledger-notes",
+  "productName": "Ledger",
+  "version": "1.0.2",
+  "description": "College notes, schedule, Canvas and AI in one desktop app",
+  "main": "main/main.js",
+  "private": true,
+  "scripts": {
+    "build:ui": "node build.mjs",
+    "start": "node build.mjs && electron .",
+    "dist": "node build.mjs && electron-builder --win nsis",
+    "test": "node --test test/core.test.js"
+  },
+  "build": {
+    "appId": "com.ledger.notes",
+    "productName": "Ledger",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "package.json",
+      "main/**",
+      "shared/**",
+      "renderer/index.html",
+      "renderer/styles.css",
+      "renderer/dist/**",
+      "build/icon.png"
+    ],
+    "asarUnpack": [
+      "node_modules/@playwright/mcp/**",
+      "node_modules/playwright/**",
+      "node_modules/playwright-core/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Ledger"
+    }
+  },
+  "dependencies": {
+    "@playwright/mcp": "^0.0.83",
+    "electron-updater": "^6.8.9",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/search": "^6.7.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.14",
+    "chart.js": "^4.5.1",
+    "chrono-node": "^2.10.3",
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "electron-winstaller@5.4.0": true
+  }
+}
