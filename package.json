@@ -43,6 +43,12 @@
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "Ledger"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "kklja",
+      "repo": "ledger",
+      "releaseType": "release"
     }
   },
   "dependencies": {
@@ -64,5 +70,6 @@
   "allowScripts": {
     "esbuild@0.28.2": true,
     "electron-winstaller@5.4.0": true
-  }
+  },
+  "repository": "https://github.com/kklja/ledger"
 }
