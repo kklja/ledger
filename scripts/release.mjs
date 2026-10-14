@@ -17,7 +17,7 @@ run('npm test');
 run(`npm version ${bump} --no-git-tag-version`);
 const { version } = JSON.parse(readFileSync('package.json', 'utf8'));
 run('git add -A');
-run(`git commit -m "Release v${version}"`);
+run(`git commit -m "Release v${version}" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"`);
 run(`git tag v${version}`);
 run('git push origin HEAD --tags');
 run('node build.mjs');

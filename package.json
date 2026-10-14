@@ -1,7 +1,7 @@
 {
   "name": "ledger-notes",
   "productName": "Ledger",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "College notes, schedule, Canvas and AI in one desktop app",
   "main": "main/main.js",
   "private": true,

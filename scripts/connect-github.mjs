@@ -21,7 +21,7 @@ let hasRemote = true;
 try { out('git', ['remote', 'get-url', 'origin']); } catch { hasRemote = false; }
 if (!hasRemote) {
   run('git add package.json');
-  run(`git commit -m "Publish updates to github.com/${owner}/ledger"`);
+  run(`git commit -m "Publish updates to github.com/${owner}/ledger" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"`);
   run(`gh repo create ledger --public --source . --remote origin --description "Ledger: college notes, schedule, Canvas/Blackboard + AI"`);
 }
 run('node scripts/release.mjs patch');
